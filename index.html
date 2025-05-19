@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ophelia</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --highlight: #ffcc70;
+      --bg: #0e0c10;
+      --card-bg: #18141c;
+      --text-main: #f0e6ff;
+      --text-sub: #aaa0bb;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, var(--bg), #1e1822);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-attachment: fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      color: var(--highlight);
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      color: var(--text-sub);
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 1200px;
+    }
+    .gallery-item {
+      background: var(--card-bg);
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 204, 112, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .gallery-item:hover {
+      transform: scale(1.035);
+      box-shadow: 0 0 35px rgba(255, 204, 112, 0.3);
+    }
+    model-viewer {
+      width: 100%;
+      height: 350px;
+      background: #221c2f;
+    }
+    img.art {
+      width: 100%;
+      display: block;
+      border-bottom: 2px solid var(--highlight);
+    }
+    footer {
+      margin: 4rem 0 2rem;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: #6e6285;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ophelia</h1>
+    <p>Whimsical depth meets digital craft — a gallery of dark wonder and light play.</p>
+    <div class="tagline">A portfolio by Reginald</div>
+  </header>
+
+  <section class="gallery">
+    <!-- 3D Model Example -->
+    <div class="gallery-item">
+      <model-viewer src="models/judas.glb" alt="3D Model of Judas"
+        auto-rotate camera-controls background-color="#1a1a1d">
+      </model-viewer>
+    </div>
+
+    <!-- 2D Art Example -->
+    <div class="gallery-item">
+      <img class="art" src="images/painting1.jpg" alt="Concept Art 1">
+    </div>
+
+    <div class="gallery-item">
+      <img class="art" src="images/painting2.jpg" alt="Concept Art 2">
+    </div>
+  </section>
+
+  <footer>
+    Crafted in the void & powered by GitHub Pages • Ophelia © 2025
+  </footer>
+</body>
+</html>
